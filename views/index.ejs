@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>留言板</title>
+    
+</head>
+<body>
+    <h3>留言板</h3>
+    <div class="enter">
+        <form action="/submit" method="get">
+            姓名: <input type="text" name="name" ></input><br>
+            留言: <input type="text" name="comment"></input><br><br>            
+            <button>送出留言</button>
+            <hr/>
+        </form>
+    </div>
+
+    <div class="show">
+        <h3>留言列表</h3>
+        <%for(let i=0;i<messages.length;i++){%>
+            使用者: <%= messages[i].name%><br>
+            時間: <%=messages[i].dateValues%><br>
+            內容: <%= messages[i].comment%><br>
+            <hr>
+        <%}%>
+    </div>
+    
+</body>
+</html>
